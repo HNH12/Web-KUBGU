@@ -9,14 +9,23 @@ body {
 	background-image: url("../images/background.jpg");
 	background-position: center;
 	background-size: cover;	
-	height: 70vh;
+	height: 80vh;
+}
+
+header {
+	font-family: 'Noto Sans HK', sans-serif;
+	margin: 0 auto;
+	margin-top: 50px;
+	text-align: center;
+	font-size: 50px;
+	color: rgba(169, 169, 169, 0.2);
 }
 
 .block {
 	width: 90vw;
 	height: 400px;
 	perspective: 600px;
-	margin: 150px auto;
+	margin: 80px auto;
 	transform-style: flat;
 	text-align: center;
 	display: flex;
@@ -35,44 +44,44 @@ body {
 .second-block.first {
 	background-image: url("../images/Resume.png");
 	background-size: cover;
-	box-shadow: 8px 8px 12px 5px gray;
+	box-shadow: 8px 14px 12px 5px #C0C0C0;
 	background-position: center;
 }
 
 .second-block.second {
 	background-image: url("../images/hobby.jpg");
 	background-size: cover;
-	box-shadow: 0px 12px 12px 5px gray;
+	box-shadow: 2px 14px 12px 5px #C0C0C0;
 	background-position: center;
 }
 
 .second-block.third {
 	background-image: url("../images/Biography.jpg");
-	box-shadow: -8px 12px 12px 5px gray;
+	box-shadow: -2px 14px 12px 5px #C0C0C0;
 	background-size: cover;
 	background-position: center;
 }
 
 .second-block.fourth {
 	background-image: url("../images/tasks.jpg");
-	box-shadow: -8px 12px 12px 5px gray;
+	box-shadow: -8px 14px 12px 5px #C0C0C0;
 	background-size: cover;
 	background-position: center;
 }
 
 /*.second-block.first:hover {
 	transform: rotateX(0deg) translate(0,25%);
-	box-shadow: 0px 4px 12px 4px gray; 
+	box-shadow: 0px 4px 12px 4px #C0C0C0; 
 }
 
 .second-block.second:hover {
 	transform: rotateX(0deg) translate(0,25%);
-	box-shadow: 0px 4px 12px 4px gray; 
+	box-shadow: 0px 4px 12px 4px #C0C0C0; 
 }
 */
 .second-block:hover {
 	transform: rotateX(0deg) translate(0,25%);
-	box-shadow: 0px 4px 12px 4px gray; 
+	box-shadow: 0px 4px 12px 4px #C0C0C0; 
 }
 
 .second-block:hover .text {
