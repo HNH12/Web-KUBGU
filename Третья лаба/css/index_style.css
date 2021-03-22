@@ -11,7 +11,6 @@ body {
 
 .block {
 	width: 90vw;
-
 	height: 400px;
 	perspective: 600px;
 	margin: 150px auto;
@@ -21,32 +20,38 @@ body {
 }
 
 .second-block {
-	height: 250px;
-	width: 250px;
+	height: 220px;
+	width: 220px;
 	margin: 0% auto 0;
 	border-radius: 8px;
-	/*filter: blur(2px);*/
 	transform-style: flat;
 	transform: rotateX(60deg) translate(0,-25%);
 	transition: transform 0.8s ease-out, height 0.4s ease-out, box-shadow 0.7s ease-out, filter 0.8s ease-out;
 }
 
 .second-block.first {
-	background-image: url("");
+	background-image: url("../images/Resume.png");
 	background-size: cover;
 	box-shadow: 8px 8px 12px 5px gray;
 	background-position: center;
 }
 
 .second-block.second {
-	background-image: url("https://sun9-11.userapi.com/impg/EncYRMHQF4Pi0t8OM6kNUpOTaLETl0JEdmqAqQ/tnHK1L_Fqg0.jpg?size=2560x1440&quality=96&sign=12fb54aee4bf3e980bcb1a5210136db4&type=album");
+	background-image: url("../images/hobby.jpg");
 	background-size: cover;
 	box-shadow: 0px 12px 12px 5px gray;
 	background-position: center;
 }
 
 .second-block.third {
-	background-image: url("https://cdn.pixabay.com/photo/2017/07/02/21/34/shoes-2465907_1280.jpg");
+	background-image: url("../images/Biography.jpg");
+	box-shadow: -8px 12px 12px 5px gray;
+	background-size: cover;
+	background-position: center;
+}
+
+.second-block.fourth {
+	background-image: url("../images/tasks.jpg");
 	box-shadow: -8px 12px 12px 5px gray;
 	background-size: cover;
 	background-position: center;
