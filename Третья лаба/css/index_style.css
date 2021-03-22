@@ -3,10 +3,13 @@
 	padding: 0; 
 }
 
+/*https://img2.goodfon.ru/original/2880x1800/0/b7/volny-chernyy-belyy-nastroenie.jpg*/
+
 body {
-	background-image: url("https://img2.goodfon.ru/original/2880x1800/0/b7/volny-chernyy-belyy-nastroenie.jpg");
+	background-image: url("../images/background.jpg");
 	background-position: center;
 	background-size: cover;	
+	height: 70vh;
 }
 
 .block {
