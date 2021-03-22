@@ -9,90 +9,96 @@ body {
 	background-image: url("../images/background.jpg");
 	background-position: center;
 	background-size: cover;	
-	height: 80vh;
+	height: 100vh;
 }
 
 header {
 	font-family: 'Noto Sans HK', sans-serif;
-	margin: 0 auto;
-	margin-top: 50px;
+	margin: auto 0;
 	text-align: center;
 	font-size: 50px;
-	color: rgba(169, 169, 169, 0.2);
+	color: black;
+	opacity: 0.5;
 }
 
-.block {
+.main-block {
 	width: 90vw;
 	height: 400px;
 	perspective: 600px;
-	margin: 80px auto;
+	margin: 0 auto 0;
 	transform-style: flat;
 	text-align: center;
 	display: flex;
 }
 
-.second-block {
-	height: 220px;
-	width: 220px;
-	margin: 0% auto 0;
+.card-block {
+	opacity: 1.0;
+	height: 230px;
+	width: 230px;
+	margin: 80px auto 0;
 	border-radius: 8px;
 	transform-style: flat;
 	transform: rotateX(60deg) translate(0,-25%);
-	transition: transform 0.8s ease-out, height 0.4s ease-out, box-shadow 0.7s ease-out, filter 0.8s ease-out;
+	transition: transform 0.8s ease-out, height 1.5s linear, width 1.5s linear, box-shadow 0.7s ease-out, filter 0.8s ease-out, opacity 1.0s linear;	
 }
 
-.second-block.first {
+.card-block.first {
 	background-image: url("../images/Resume.png");
 	background-size: cover;
-	box-shadow: 8px 14px 12px 5px #C0C0C0;
+	box-shadow: 8px 14px 12px 5px gray;
 	background-position: center;
 }
 
-.second-block.second {
+.card-block.second {
 	background-image: url("../images/hobby.jpg");
 	background-size: cover;
-	box-shadow: 2px 14px 12px 5px #C0C0C0;
+	box-shadow: 2px 14px 12px 5px gray;
 	background-position: center;
 }
 
-.second-block.third {
+.card-block.third {
 	background-image: url("../images/Biography.jpg");
-	box-shadow: -2px 14px 12px 5px #C0C0C0;
+	box-shadow: -2px 14px 12px 5px gray;
 	background-size: cover;
 	background-position: center;
 }
 
-.second-block.fourth {
+.card-block.fourth {
 	background-image: url("../images/tasks.jpg");
-	box-shadow: -8px 14px 12px 5px #C0C0C0;
+	box-shadow: -8px 14px 12px 5px gray;
 	background-size: cover;
 	background-position: center;
 }
 
-/*.second-block.first:hover {
+.card-block:hover {
 	transform: rotateX(0deg) translate(0,25%);
-	box-shadow: 0px 4px 12px 4px #C0C0C0; 
+	box-shadow: 0px 4px 12px 4px gray; 
 }
 
-.second-block.second:hover {
-	transform: rotateX(0deg) translate(0,25%);
-	box-shadow: 0px 4px 12px 4px #C0C0C0; 
-}
-*/
-.second-block:hover {
-	transform: rotateX(0deg) translate(0,25%);
-	box-shadow: 0px 4px 12px 4px #C0C0C0; 
-}
-
-.second-block:hover .text {
+.card-block:hover .text {
 	opacity: 1;
 }
 
 .text {
+	pointer-events: none;
 	font-size: 30px;
 	margin: 40% auto;
 	color: white;
 	text-align: center;
 	opacity: 0;
 	transition: opacity 0.4s linear;
+}
+
+.card-block.active {
+	background: none;
+	/*transform-style: flat;
+	transform: rotateX(0deg) translate(0,0);	
+	top: 0;
+	left: 0;
+	height: 90vh;
+	width: 90vw;*/
+}
+
+.card-block.active > .text {
+	color: gray;
 }
