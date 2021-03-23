@@ -27,28 +27,17 @@ function get_siblings(obj) {
     }
 
     siblings.forEach((value) => {
+    	set_opacity(value)
     })
 
-    setTimeout(function () { obj.classList.toggle('active') }, 100);
+    setTimeout(function () { siblings.forEach((value) => {
+    	set_display(value)
+    }) }, 400);
+
+    setTimeout(function () { obj.classList.toggle('active') }, 410);
 }
 
 
-document.getElementById("first").addEventListener("click", (e) => {
+document.getElementById("first").addEventListener("mouseon", (e) => {
 	get_siblings(event.target);
-})
-
-document.getElementById("second").addEventListener("click", (e) => {
-	console.log(event.target.classList.toggle('active'))
-	get_siblings(event.target)
-})
-
-document.getElementById("third").addEventListener("click", (e) => {
-	console.log(event.target.classList.toggle('active'))
-	get_siblings(event.target)
-})
-
-
-document.getElementById("fourth").addEventListener("click", (e) => {
-	console.log(event.target.classList.toggle('active'))
-	get_siblings(event.target)
 })

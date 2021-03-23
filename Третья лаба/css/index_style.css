@@ -3,8 +3,6 @@
 	padding: 0; 
 }
 
-/*https://img2.goodfon.ru/original/2880x1800/0/b7/volny-chernyy-belyy-nastroenie.jpg*/
-
 body {
 	background-image: url("../images/background.jpg");
 	background-position: center;
@@ -90,7 +88,12 @@ header {
 }
 
 .card-block.active {
-	background: none;
+	transform: scale(2,2) translate(-50%, -50%);
+	background-image: none;
+	background-color: white;
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
 	/*transform-style: flat;
 	transform: rotateX(0deg) translate(0,0);	
 	top: 0;
@@ -102,3 +105,5 @@ header {
 .card-block.active > .text {
 	color: gray;
 }
+
+
