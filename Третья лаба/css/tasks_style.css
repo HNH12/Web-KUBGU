@@ -25,10 +25,52 @@
 
 .task {
 	max-height: 0;
+	opacity: 0;
 	overflow: hidden;
-	transition: max-height 0.2s linear;
+	transition: max-height 0.2s linear, opacity 0.25s linear;
 }
 
 .task.active {
 	overflow: visible;
+	opacity: 1;
+}
+
+.task-item {
+	width: 60%;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.task-item.fourth {
+	display: flex;
+	justify-content: space-between;
+}
+
+.container {
+	height: 50px;
+	width: 50px;
+}
+
+.block {
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+	transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+.block.first-block {
+	background-color: green;
+}
+
+.block.second-block {
+	background-color: yellow;
+}
+
+.block.third-block {
+	background-color: red;
+}
+
+.block.active {
+	transform: scale(0.5);
+	opacity: 0;
 }
