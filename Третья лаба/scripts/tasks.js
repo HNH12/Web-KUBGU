@@ -26,6 +26,22 @@ document.getElementsByClassName('item').forEach(
 	addEventListener("click", function(e) {
 	e.target.classList.toggle('active');
 
+	if(e.target.classList.contains('fifth')) {
+		if(e.target.classList.contains('active')) {
+			setTimeout(function() {
+				while(true) {
+					let text = prompt('Введите текст блока (Esc для отмены)');
+					if(text == null) {
+						break;
+					}
+					let newElement = document.createElement("div");
+					newElement.appendChild(text);
+					e.target.nextSibling.firstChild.appendChild(newElement);
+				}
+			}, 250);
+		}
+	}
+
 	(function() {
 		nextSibling = e.target.nextElementSibling;
 		if(nextSibling.style.maxHeight) {
@@ -41,4 +57,4 @@ document.getElementsByClassName('item').forEach(
 document.getElementsByClassName('container').forEach(
 	addEventListener("click", function(e) {
 	fourthTask(e.target);
-}))
+}));
