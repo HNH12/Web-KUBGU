@@ -127,13 +127,24 @@ img {
 }
 
 .sweety-menu {
+	display: block;
 	margin: 10px 0 0 0;
 	padding: 0;
 	max-height: 0;
 	list-style: none;
 	overflow: hidden;
+	transition: max-height 0.2s linear;
 }
 
 .sweety-menu.active {
 	overflow: visible;
+}
+
+.sweety-menu li {
+	transition: opacity 0.2s linear;
+}
+
+.sweety-menu li:hover {
+	cursor: pointer;
+	color: blue;
 }
