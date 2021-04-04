@@ -4,5 +4,5 @@ document.getElementById("first").addEventListener("click", (e) => {
 
 
 document.getElementById('fourth').addEventListener('click', () => {
-	document.location = '../tasks/tasks.html';
+	document.location.href = 'tasks/tasks.html';
 });

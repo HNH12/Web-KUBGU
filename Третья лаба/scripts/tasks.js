@@ -178,6 +178,13 @@ let setListenersToImg = function() {
 
 let prepareLoadPage = function() {
 	let arrItem = document.getElementsByClassName('item');
+	for (let i = 0; i < arrItem.length; i++) {
+		setTimeout(() => {
+			arrItem[i].style.transform = "translateX(0)";
+			arrItem[i].style.opacity = '1';
+		}, 100*i);
+	}
+
 	for(let i = 0; i < arrItem.length; i++) {
 		arrItem[i].addEventListener("click", function(e) {
 			e.target.classList.toggle('active');
