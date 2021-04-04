@@ -1,3 +1,8 @@
+img {
+	display: block;
+	max-width: 100%;
+}
+
 .list-task {
 	width: 80%;
 	margin: 0 auto;
@@ -73,4 +78,62 @@
 .block.active {
 	transform: scale(0.5);
 	opacity: 0;
+}
+
+.table-task-sixth {
+	margin: 0 auto;
+}
+
+.table-task-sixth td {
+	height: 50px;
+	width: 50px;
+	background-color: black;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.sweety-title {
+	width: 15%;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.sweety-title:hover {
+	color: blue;
+}
+
+.sweety-title.active {
+	color: blue;
+}
+
+.sweety-title.active:after {
+	display: block;
+	content: "";
+	height: 1px;
+	width: 40px;
+	margin: 0 auto;
+	background-color: blue;
+}
+
+.sweety-title.active:hover {
+	color: black;
+}
+
+.sweety-title.active:hover:after {
+	background-color: black;
+}
+
+.sweety-menu {
+	margin: 10px 0 0 0;
+	padding: 0;
+	max-height: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+.sweety-menu.active {
+	overflow: visible;
 }
