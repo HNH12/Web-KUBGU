@@ -101,11 +101,6 @@ let seventhTask = function() {
 };
 
 
-let eighthTask = function() {
-	
-};
-
-
 firstTask();
 sixthTask();
 seventhTask();
@@ -130,8 +125,20 @@ for(let i = 0; i < arrItem.length; i++) {
 			e.target.nextElementSibling.classList.toggle('active');
 			}, 250);
 		} else {
-			correctHeight(e.target);
-			e.target.nextElementSibling.classList.toggle('active');
+			if(e.target.classList.contains('eighth') && e.target.classList.contains('active')) {
+				correctHeight(e.target);
+				e.target.nextElementSibling.classList.toggle('active');
+				setTimeout(function() {
+					e.target.nextElementSibling.firstElementChild.firstElementChild.style.opacity = '1';
+				}, 500);
+			}
+			else {
+				if(e.target.classList.contains('eighth') && !e.target.classList.contains('active')) {
+					e.target.nextElementSibling.firstElementChild.firstElementChild.style.opacity = '0'
+				}
+				correctHeight(e.target);
+				e.target.nextElementSibling.classList.toggle('active');
+			}
 		}
 	});
 }
@@ -143,3 +150,11 @@ for(let i = 0; i< arrBlocks.length; i++) {
 		fourthTask(e.target);
 	});
 }
+
+document.querySelector('.task-item.ninth img').addEventListener('mouseover', (e) => {
+	e.target.style.opacity = '0';
+});
+
+document.querySelector('.task-item.ninth img').addEventListener('mouseout', (e) => {
+	e.target.style.opacity = '1';
+});
