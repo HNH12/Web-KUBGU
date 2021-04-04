@@ -3,7 +3,7 @@ let firstTask = function() {
 	let taskDiv = document.querySelector("div.task-item.first");
 	let newElement = document.createElement("p");
 	let dateRightFormat = currentDate.toLocaleDateString();
-	newElement.appendChild(document.createTextNode(dateRightFormat));
+	newElement.appendChild(document.createTextNode('Текущая дата: ' + dateRightFormat));
 	taskDiv.appendChild(newElement);
 };
 

@@ -1,5 +1,8 @@
 html {
-  overflow-y: scroll;
+  	overflow-y: scroll;
+  	font-family: 'Cormorant Garamond', serif;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 ::-webkit-scrollbar { width: 15px; height: 3px;}
@@ -31,6 +34,7 @@ img {
 }
 
 .item {
+
 	display: flex;
 	justify-content: space-between;
 	opacity: 0;
@@ -106,6 +110,10 @@ img {
 	padding: 15px;
 }
 
+.task-item.second {
+	box-shadow: 0 0 10px 2px gray;
+}
+
 .task-item.second table {
 	margin: 0 auto;
 	position: relative;
@@ -117,16 +125,16 @@ img {
 	display: block;
 	content: "";
 	height: 2px;
-	width: 140px;
-	background-color: blue;
+	width: 130px;
+	background-color: #3FBAC2;
 }
 
 .weekend {
-	color: red;
+	color: #E67A7A;
 }
 
 #today {
-	background-color: red;
+	background-color: #d96464;
 	color: white;
 }
 
