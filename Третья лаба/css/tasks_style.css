@@ -46,6 +46,38 @@ img {
 	padding: 15px;
 }
 
+.task-item.second table {
+	margin: 0 auto;
+	position: relative;
+}
+
+.task-item.second table:before {
+	position: absolute;
+	margin: 0 auto;
+	display: block;
+	content: "";
+	height: 2px;
+	width: 140px;
+	background-color: blue;
+}
+
+.weekend {
+	color: red;
+}
+
+#today {
+	background-color: red;
+	color: white;
+}
+
+.full-date {
+	height: 40px;
+	width: 140px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
 .task-item.fourth {
 	display: flex;
 	justify-content: space-between;
@@ -189,11 +221,13 @@ img {
 
 .task-item.ninth {
 	position: relative;
+	height: 300px;
+	width: 300px;
 }
 
 .task-item.ninth p {
 	z-index: -1;
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: 35%;
 }
