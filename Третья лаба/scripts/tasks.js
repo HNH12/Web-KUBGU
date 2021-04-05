@@ -119,7 +119,7 @@ let liEventHandler = function (event) {
 	event.target.style.opacity = '0';
 	let nextSiblings = getNextSiblings(event.target);
 	let coordYDeletedItem = event.target.getBoundingClientRect().y;
-	let distanceNearests = nextSiblings.length == 0 ? undefined : nextSiblings[0].getBoundingClientRect().y - coordYDeletedItem;
+	let distanceNearests = (nextSiblings.length == 0 ? undefined : nextSiblings[0].getBoundingClientRect().y - coordYDeletedItem);
 
 	for(let i = 0; i < nextSiblings.length; i++) {
 		nextSiblings[i].style.transition = 'transform 0.4s linear';
