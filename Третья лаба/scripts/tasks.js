@@ -1,10 +1,14 @@
 let firstTask = function() {
-	let currentDate = new Date();
-	let taskDiv = document.querySelector("div.task-item.first");
-	let newElement = document.createElement("p");
-	let dateRightFormat = currentDate.toLocaleDateString();
-	newElement.appendChild(document.createTextNode('Текущая дата: ' + dateRightFormat));
-	taskDiv.appendChild(newElement);
+	setInterval(() => {
+		let currentDate = new Date();
+		let taskDiv = document.querySelector("div.task-item.first");
+		let newElement = document.createElement("p");
+		let dateRightFormat = currentDate.toLocaleDateString() + ' ' + currentDate.getHours() + ":"
+			+ currentDate.getMinutes() + ":" + currentDate.getSeconds();
+		newElement.appendChild(document.createTextNode('Текущая дата: ' + dateRightFormat));
+		taskDiv.innerHTML = newElement.innerHTML;
+	}, 100);
+
 };
 
 
@@ -88,20 +92,17 @@ let fourthTask = function(elem) {
 
 
 let sixthTask = function() {
-	let table = document.querySelectorAll('table.table-task-sixth td');
-	for(let i = 0; i < table.length; i++) {
-		table[i].addEventListener('dblclick', function(e) {
-			let currentImg = e.target;
-			let siblingImg;
-			if(currentImg.parentNode.nextElementSibling !== null) {
-				siblingImg = currentImg.parentNode.nextElementSibling.firstElementChild;
-			}
-			else {
-				siblingImg = currentImg.parentNode.previousElementSibling.firstElementChild
-			}
-			currentImg.src = siblingImg.src;
-		});
-	}
+	document.querySelector('table.table-task-sixth').addEventListener('dblclick', function(e) {
+		let currentImg = e.target;
+		let siblingImg;
+		if(currentImg.parentNode.nextElementSibling !== null) {
+			siblingImg = currentImg.parentNode.nextElementSibling.firstElementChild;
+		}
+		else {
+			siblingImg = currentImg.parentNode.previousElementSibling.firstElementChild
+		}
+		currentImg.src = siblingImg.src;
+	});
 };
 
 
@@ -155,6 +156,89 @@ let seventhTask = function() {
 	for(let i = 0; i < arrLi.length; i++) {
 		arrLi[i].addEventListener('click', liEventHandler, false);
 	}
+};
+
+
+let checkEmail = function(userEmail) {
+	const rexEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
+	return rexEmail.test(userEmail);
+};
+
+
+let checkLogin = function(userLogin) {
+	const rexLogin = /[\w\d]{3,}$/;
+	return rexLogin.test(userLogin);
+}
+
+
+
+let validateInput = function() {
+	let email = document.getElementById('email');
+	let login = document.getElementById('login');
+	let password = document.getElementById('password');
+	let repeatPassword = document.getElementById('repeat-password');
+	let passport = document.getElementById('passport');
+	let polis = document.getElementById('polis');
+	let phoneNumber = document.getElementById('phone');
+
+	email.onfocus = function() {
+		if(this.value != '') {
+			this.classList.remove('wrong-data');
+		}
+	}
+
+	email.onblur = function() {
+		if(this.value != '') {
+			if(!checkEmail(this.value)) {
+				this.classList.add('wrong-data');
+			}
+		}
+	}
+
+	login.onfocus = function() {
+		if(this.value != '') {
+			if(!checkLogin(this.value)) {
+				this.classList.remove('wrong-data');
+			}
+		}
+	}
+
+	login.onblur = function () {
+		if(this.value != '') {
+			if(!checkLogin(this.value)) {
+				this.classList.add('wrong-data');
+			}
+		}
+	}
+
+	password.onblur = function() {
+		if(password.value != '') {
+			if(repeatPassword.value!='' && repeatPassword.value != this.value) {
+				this.classList.add('wrong-data');
+				repeatPassword.classList.add('wrong-data');
+			}
+		}
+	}
+
+	password.onfocus = function() {
+		repeatPassword.classList.remove('wrong-data');
+		this.classList.remove('wrong-data');
+	}
+
+	repeatPassword.onblur = function() {
+		if(this.value != '') {
+			if(password.value!='' && password.value != this.value) {
+				this.classList.add('wrong-data');
+				password.classList.add('wrong-data');
+			}
+		}
+	}
+
+	repeatPassword.onfocus = function() {
+		password.classList.remove('wrong-data');
+		this.classList.remove('wrong-data');
+	}
+
 };
 
 
@@ -231,3 +315,4 @@ firstTask();
 sixthTask();
 seventhTask();
 prepareLoadPage();
+validateInput();
