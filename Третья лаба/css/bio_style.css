@@ -104,3 +104,17 @@ img {
 .active {
 	background-color: #3FBAC2;
 }
+
+.slider img {
+	position: absolute;
+	transition: opacity 0.2s linear;
+}
+
+.showing {
+	z-index: 2;
+}
+
+.hidden-slide {
+	z-index: 1;
+	opacity: 0;
+}

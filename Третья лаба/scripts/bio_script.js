@@ -5,23 +5,41 @@ let slider = function() {
 
     let slider = document.querySelector('.slider img');
 
+    let firstImg = document.querySelector('.first');
+    let secondImg = document.querySelector('.second');
+    let thirdImg = document.querySelector('.third');
 
     firstButton.addEventListener('click', ()=>{
-        slider.setAttribute('src',images[0]);
+        firstImg.classList.remove('hidden-slide');
+        firstImg.classList.add('showing');
+
+        secondImg.classList.add('hidden-slide');
+        thirdImg.classList.add('hidden-slide');
+
         firstButton.classList.add('active');
         secondButton.classList.remove('active');
         thirdButton.classList.remove('active');
     });
 
     secondButton.addEventListener('click', ()=>{
-        slider.setAttribute('src',images[1]);
+        secondImg.classList.remove('hidden-slide');
+        secondImg.classList.add('showing');
+
+        firstImg.classList.add('hidden-slide');
+        thirdImg.classList.add('hidden-slide');
+
         secondButton.classList.add('active');
         firstButton.classList.remove('active');
         thirdButton.classList.remove('active');
     });
 
     thirdButton.addEventListener('click', ()=>{
-        slider.setAttribute('src',images[2]);
+        thirdImg.classList.remove('hidden-slide');
+        thirdImg.classList.add('showing');
+
+        secondImg.classList.add('hidden-slide');
+        firstImg.classList.add('hidden-slide');
+
         thirdButton.classList.add('active');
         secondButton.classList.remove('active');
         firstButton.classList.remove('active');
