@@ -4,18 +4,16 @@
 }
 
 .loader {
-    position: absolute;
-    height:100%;width:100%
+    margin: 0 auto;
+    position: relative;
+    height:50%;
+    width:50%;
 }
 
 .loader-main {
-    position:absolute;
-    top:50%;
-    left:50%;
+    margin: 30% auto 0;
     width:172px;
     height:128px;
-    margin:0;
-    transform:translate(-50%,-50%);
 }
 
 .loader-square {
@@ -45,7 +43,7 @@
     height:36px;
     width:36px;
     border-radius:2px;
-    background-color:#FFFFFF
+    background-color:#3FBAC2;
 }
 
 .loader-square span:nth-child(1) {
@@ -121,6 +119,15 @@
     45%,55% {
         transform:translate(-40px,0px) rotate(-90deg);
     }
+}
+
+.loaded-hiding .loader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .loader {
+    display: none;
 }
 
 html {

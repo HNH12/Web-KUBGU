@@ -87,17 +87,34 @@ let getResultGame = function(color) {
 
     if(color === 'orange') {
         let result = document.createTextNode('Победа');
+
+        let squares = document.querySelectorAll('.loader-square span');
+        for(let i = 0; i < squares.length; i++) {
+            squares[i].style.backgroundColor = '#e09a31';
+        }
+
         resultWindow.classList.add('win-orange');
         resultWindow.appendChild(result);
         button.classList.add('win-orange');
     } else {
         if(color === 'blue') {
             let result = document.createTextNode('Победа');
+
+            let squares = document.querySelectorAll('.loader-square span');
+            for(let i = 0; i < squares.length; i++) {
+                squares[i].style.backgroundColor = '#17828a';
+            }
             resultWindow.classList.add('win-blue');
             resultWindow.appendChild(result);
             button.classList.add('win-blue');
         } else {
             let result = document.createTextNode('Ничья');
+
+            let squares = document.querySelectorAll('.loader-square span');
+            for(let i = 0; i < squares.length; i++) {
+                squares[i].style.backgroundColor = '#00B8A9';
+            }
+            
             resultWindow.classList.add('draw');
             resultWindow.appendChild(result);
             button.classList.add('draw');
