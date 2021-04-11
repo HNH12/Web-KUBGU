@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiйv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="description" content="Free Web tutorials">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/tasks_style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<title>Задания</title>
+	<script src="https://use.fontawesome.com/5d06fc5c95.js"></script>
 </head>
 <body>
 	<div class="list-task">
@@ -118,7 +117,7 @@
 
 		<div class="item"><p>Задание 10</p><i></i></div>
 		<div class="task tenth">
-			<form name="form-registration" action="">
+			<form class='menu-registration' name="form-registration" action="">
 				<div class="title-registration">
 					Регистрация
 				</div>
@@ -130,17 +129,19 @@
 					<p>Логин:</p>
 					<input type="text" name="login" id='login' autocomplete="off" placeholder="Введите логин">
 				</div>
-				<div>
+				<div class="password-div">
 					<p>Пароль:</p>
 					<input type="password" name="password" id='password' autocomplete="off" placeholder="Введите новый пароль" >
+					<i class="fa fa-eye-slash" aria-hidden="true"></i>
 				</div>
-				<div>
+				<div class="password-div">
 					<p>Повторите пароль:</p>
 					<input type="password" name="repeat-password" id='repeat-password' autocomplete="off" placeholder="Повторите пароль">
+					<i class="fa fa-eye-slash" aria-hidden="true"></i>
 				</div>
 				<div>
 					<p>Паспорт:</p>
-					<input type="text" name="passport" id='passport' autocomplete="off" placeholder="Введите паспортные данные" pattern="2-[0-9]{3}-[0-9]{3}">
+					<input type="text" name="passport" id='passport' autocomplete="off" placeholder="Введите паспортные данные">
 
 				</div>
 				<div>
@@ -154,7 +155,16 @@
 			</form>
 		</div>
 	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../scripts/tasks.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#passport").mask("99-99 999999");
+			$("#phone").mask("+7 (999) 99-99-999");
+			$("#polis").mask("9999 9999 9999 9999");
+		});
+	</script>
 </body>
-<script src="../jquery/jquery.maskedinput.min.js"></script>
-<script type="text/javascript" src="../scripts/tasks.js"></script>
 </html>

@@ -171,7 +171,6 @@ let checkLogin = function(userLogin) {
 }
 
 
-
 let validateInput = function() {
 	let email = document.getElementById('email');
 	let login = document.getElementById('login');
@@ -239,6 +238,21 @@ let validateInput = function() {
 		this.classList.remove('wrong-data');
 	}
 
+};
+
+
+let viewPassword = function () {
+	let icoPassword = document.getElementsByClassName('fa');
+
+	for(let i = 0; i < icoPassword.length; i++) {
+		icoPassword[i].addEventListener('click', function (e) {
+			e.target.classList.toggle('fa-eye-slash');
+			e.target.classList.toggle('fa-eye');
+			e.target.previousElementSibling.type == 'text' ?
+				e.target.previousElementSibling.type = 'password'
+				: e.target.previousElementSibling.type = 'text';
+		});
+	}
 };
 
 
@@ -316,3 +330,4 @@ sixthTask();
 seventhTask();
 prepareLoadPage();
 validateInput();
+viewPassword();
