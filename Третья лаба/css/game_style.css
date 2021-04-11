@@ -79,6 +79,8 @@ img {
 }
 
 .repeate-game {
+    opacity: 0;
+    transition: opacity 0.2s linear;
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -93,27 +95,67 @@ img {
     padding: 10px;
     text-align: center;
     margin: 0 auto;
+    font-size: 30px;
+    box-shadow: 0px 0px 5px 2px gray;
 }
 
 .win-orange {
-    color: #ad6018;
+    color: #e09a31;
 }
 
 .win-blue {
     color: #17828a;
 }
 
+.draw {
+    color: #00B8A9;
+}
+
 .restart-game {
+    font-size: 20px;
     width: 150px;
-    padding: 10px;
+    padding: 10px 15px;
     text-align: center;
     margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.restart-game.win-blue {
+    border: 2px solid #17828a;
+    color: #17828a;
+}
+
+.restart-game.draw {
+    border: 2px solid #00B8A9;
+    color: #00B8A9;
+}
+
+.restart-game.win-orange {
+    border: 2px solid #e09a31;
+    color: #e09a31;
+}
+
+.restart-game.draw:hover {
+    background-color: #00B8A9;
+    color: #F5F5F5;
+}
+
+.restart-game.win-blue:hover {
+    background-color: #17828a;
+    color: #F5F5F5;
+}
+
+.restart-game.win-orange:hover {
+    background-color: #e09a31;
+    color: #F5F5F5;
 }
 
 .game-table {
     z-index: 1;
     position: absolute;
     border-collapse: collapse;
+    transition: opacity 0.2s linear;
     width: 100%;
     height: 100%;
 }
