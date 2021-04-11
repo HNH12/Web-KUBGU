@@ -1,10 +1,18 @@
+function checkTime(i) {
+	if (parseInt(i) < 10) {
+		i = "0" + i;
+	}
+	return i;
+}
+
+
 let firstTask = function() {
 	setInterval(() => {
 		let currentDate = new Date();
 		let taskDiv = document.querySelector("div.task-item.first");
 		let newElement = document.createElement("p");
-		let dateRightFormat = currentDate.toLocaleDateString() + ' ' + currentDate.getHours() + ":"
-			+ currentDate.getMinutes() + ":" + currentDate.getSeconds();
+		let dateRightFormat = currentDate.toLocaleDateString() + ' ' + checkTime(currentDate.getHours()) + ":"
+			+ checkTime(currentDate.getMinutes()) + ":" + checkTime(currentDate.getSeconds());
 		newElement.appendChild(document.createTextNode('Текущая дата: ' + dateRightFormat));
 		taskDiv.innerHTML = newElement.innerHTML;
 	}, 100);
