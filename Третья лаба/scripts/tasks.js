@@ -249,6 +249,28 @@ let validateInput = function() {
 };
 
 
+let validateForm = function() {
+	let email = document.getElementById('email');
+	let login = document.getElementById('login');
+	let password = document.getElementById('password');
+	let repeatPassword = document.getElementById('repeat-password');
+	let passport = document.getElementById('passport');
+	let polis = document.getElementById('polis');
+	let phoneNumber = document.getElementById('phone');
+
+	let allObj = [email, login, password, repeatPassword, passport, polis, phoneNumber];
+	let check = true;
+
+	for(let i = 0; i < allObj.length; i++) {
+		if(allObj[i].value == '' || allObj[i].classList.contains('wrong-data'))
+			check = false;
+	}
+
+	if (!check) alert('Заполните форму регистрации верно');
+	return check;
+};
+
+
 let viewPassword = function () {
 	let icoPassword = document.querySelectorAll('.fa.fa-eye-slash');
 
@@ -278,6 +300,27 @@ let setListenersToImg = function() {
 
 	document.querySelector('.task-item.ninth img').addEventListener('mouseout', (e) => {
 		e.target.style.opacity = '1';
+	});
+};
+
+
+let clearForm = function() {
+	let button = document.querySelector('div.button-form');
+	button.addEventListener('click', function () {
+		let form = document.querySelector('form');
+		let email = document.getElementById('email');
+		let login = document.getElementById('login');
+		let password = document.getElementById('password');
+		let repeatPassword = document.getElementById('repeat-password');
+
+		let allObj = [email, login, password];
+		for(let i = 0; i < allObj.length; i++) {
+			allObj[i].classList.remove('wrong-data');
+			allObj[i].previousElementSibling.style.visibility = 'hidden';
+		}
+		repeatPassword.classList.remove('wrong-data');
+
+		form.reset();
 	});
 };
 
@@ -339,3 +382,4 @@ seventhTask();
 prepareLoadPage();
 validateInput();
 viewPassword();
+clearForm();

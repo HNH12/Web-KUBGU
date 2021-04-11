@@ -117,7 +117,7 @@
 
 		<div class="item"><p>Задание 10</p><i></i></div>
 		<div class="task tenth">
-			<form class='menu-registration' name="form-registration" action="">
+			<form class='menu-registration' name="form-registration" action="game.html" method="GET" onsubmit="return validateForm()">
 				<div class="title-registration">
 					Регистрация
 				</div>
@@ -153,6 +153,10 @@
 				<div>
 					<p>Номер телефона:</p>
 					<input type="text" name="phone" id='phone' autocomplete="off" placeholder="Введите номер телефона">
+				</div>
+				<div class="buttons">
+					<button class="button-form">Регистрация</button>
+					<div class="button-form">Очистить</div>
 				</div>
 			</form>
 		</div>

@@ -1,0 +1,1 @@
+document.querySelector(".write").innerHTML = window.location.search;
