@@ -321,6 +321,10 @@ let clearForm = function() {
 		repeatPassword.classList.remove('wrong-data');
 
 		form.reset();
+		button.classList.add('button-form--click');
+		setTimeout(function() {
+			button.classList.remove('button-form--click');
+		}, 600);
 	});
 };
 
