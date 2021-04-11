@@ -183,6 +183,7 @@ let validateInput = function() {
 	email.onfocus = function() {
 		if(this.value != '') {
 			this.classList.remove('wrong-data');
+			this.previousElementSibling.style.visibility = 'hidden';
 		}
 	}
 
@@ -190,6 +191,7 @@ let validateInput = function() {
 		if(this.value != '') {
 			if(!checkEmail(this.value)) {
 				this.classList.add('wrong-data');
+				this.previousElementSibling.style.visibility = 'visible';
 			}
 		}
 	}
@@ -198,6 +200,7 @@ let validateInput = function() {
 		if(this.value != '') {
 			if(!checkLogin(this.value)) {
 				this.classList.remove('wrong-data');
+				this.previousElementSibling.style.visibility = 'hidden';
 			}
 		}
 	}
@@ -206,6 +209,7 @@ let validateInput = function() {
 		if(this.value != '') {
 			if(!checkLogin(this.value)) {
 				this.classList.add('wrong-data');
+				this.previousElementSibling.style.visibility = 'visible';
 			}
 		}
 	}
@@ -215,6 +219,7 @@ let validateInput = function() {
 			if(repeatPassword.value!='' && repeatPassword.value != this.value) {
 				this.classList.add('wrong-data');
 				repeatPassword.classList.add('wrong-data');
+				this.previousElementSibling.style.visibility = 'visible';
 			}
 		}
 	}
@@ -222,6 +227,7 @@ let validateInput = function() {
 	password.onfocus = function() {
 		repeatPassword.classList.remove('wrong-data');
 		this.classList.remove('wrong-data');
+		this.previousElementSibling.style.visibility = 'hidden';
 	}
 
 	repeatPassword.onblur = function() {
@@ -229,6 +235,7 @@ let validateInput = function() {
 			if(password.value!='' && password.value != this.value) {
 				this.classList.add('wrong-data');
 				password.classList.add('wrong-data');
+				password.previousElementSibling.style.visibility = 'visible';
 			}
 		}
 	}
@@ -236,13 +243,14 @@ let validateInput = function() {
 	repeatPassword.onfocus = function() {
 		password.classList.remove('wrong-data');
 		this.classList.remove('wrong-data');
+		password.previousElementSibling.style.visibility = 'hidden';
 	}
 
 };
 
 
 let viewPassword = function () {
-	let icoPassword = document.getElementsByClassName('fa');
+	let icoPassword = document.querySelectorAll('.fa.fa-eye-slash');
 
 	for(let i = 0; i < icoPassword.length; i++) {
 		icoPassword[i].addEventListener('click', function (e) {
