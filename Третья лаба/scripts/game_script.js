@@ -53,7 +53,6 @@ let resetGame = function() {
         cells[i].classList.remove('active-cell');
         cells[i].classList.remove('blue');
         cells[i].classList.remove('orange');
-        cells[i].style.backgroundColor = '';
     }
 
     menuRepeat.style.zIndex = '-1';
@@ -113,10 +112,8 @@ let gameLogic = function() {
         let check = e.target.classList.contains('active-cell');
         if(check === false){
             if(table.classList.contains('orange')) {
-                e.target.style.backgroundColor = '#fa8f2a';
                 e.target.classList.add('active-cell', 'orange');
             } else {
-                e.target.style.backgroundColor = '#3FBAC2';
                 e.target.classList.add('active-cell', 'blue');
             }
             if(checkWin()) {
@@ -131,6 +128,11 @@ let gameLogic = function() {
         }
     });
 };
+
+
+let onLoadPage = function() {
+
+}
 
 
 printInfo();
